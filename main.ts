@@ -68,7 +68,8 @@ export function run(program: Uint8Array, input: Uint8Array) {
         case 0x21: result = left < right ? 1 : 0; break;
         case 0x22: result = (left >>> 0) < (right >>> 0) ? 1 : 0; break;
       }
-      stack[--sp - 1] = result;
+      sp--;
+      stack[sp - 1] = result;
       continue;
     }
 
